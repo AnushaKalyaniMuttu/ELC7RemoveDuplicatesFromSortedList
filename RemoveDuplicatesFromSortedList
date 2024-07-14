@@ -1,0 +1,22 @@
+public class Solution {
+    public int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+
+        // Initialize the pointer for the position of unique elements
+        int uniqueIndex = 0;
+
+        // Iterate through the array
+        for (int i = 1; i < nums.length; i++) {
+            // Only update the unique index if a new element is found
+            if (nums[i] != nums[uniqueIndex]) {
+                uniqueIndex++;
+                nums[uniqueIndex] = nums[i];
+            }
+        }
+
+        // The length of the array with unique elements
+        return uniqueIndex + 1;
+    }
+}
